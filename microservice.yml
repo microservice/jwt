@@ -1,0 +1,52 @@
+omg: 1
+lifecycle:
+  startup:
+    command: ["node", "index.js"]
+info:
+  version: 1.0.0
+  title: JWT utils  
+  description: An service to build and validate JWT tokens
+  contact:
+    name: Jean Barriere
+    url: https://github.com/JeanBarriere
+    email: jean@barriere.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT 
+actions:
+  sign:
+    help: sign some data with a secret
+    arguments:
+      data:
+        type: an
+        in: requestBody
+        help: The content to sign
+      secret:
+        type: string
+        in: requestBody
+        help: The secret key
+    http:
+      port: 5000
+      method: post
+      path: /sign
+      contentType: application/json
+    output:
+      type: string
+  verify:
+    help: Verify a JWT token and return the decoded value
+    arguments:
+      token:
+        type: string
+        in: requestBody
+        help: The token to verify
+      secret:
+        type: string
+        in: requestBody
+        help: The JWT secret key
+    http:
+      port: 5000
+      method: post
+      path: /verify
+      contentType: application/json
+    output:
+      type: string

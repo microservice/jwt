@@ -1,0 +1,29 @@
+{
+  "/sign": {
+    "arguments": [{
+      "name": "data",
+      "required": true
+    }, {
+      "name": "secret",
+      "type": "string",
+      "required": true
+    }, {
+      "name": "expiresIn"
+    }],
+    "fn": "sign",
+    "outputType": "text/plain"
+  },
+  "/verify": {
+    "arguments": [{
+      "name": "token",
+      "type": "string",
+      "required": true
+    }, {
+      "name": "secret",
+      "type": "string",
+      "required": true
+    }],
+    "fn": "verify",
+    "outputType": "application/json"
+  }
+}

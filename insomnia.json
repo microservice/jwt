@@ -1,0 +1,166 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-12-04T15:21:53.606Z",
+	"__export_source": "insomnia.desktop.app:v6.2.3",
+	"resources": [
+		{
+			"_id": "wrk_1d6f28b0fd4e4ff18898be0436694bdb",
+			"created": 1543919149149,
+			"description": "",
+			"modified": 1543919149149,
+			"name": "JWT Microservice",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_330ddd1276854b43bebd8e988c3aa828",
+			"color": null,
+			"created": 1543919149151,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1543846208443,
+			"modified": 1543919149151,
+			"name": "New Environment",
+			"parentId": "wrk_1d6f28b0fd4e4ff18898be0436694bdb",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_1a2142cf10444e309046280f8fa8e8f1",
+			"cookies": [],
+			"created": 1543919149153,
+			"modified": 1543919149153,
+			"name": "Default Jar",
+			"parentId": "wrk_1d6f28b0fd4e4ff18898be0436694bdb",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_eae7bbfc10024007ae57afdc34be2b1c",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"data\": \"hello world\",\n\t\"secret\": \"abc\"\n}"
+			},
+			"created": 1543919149156,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bd6523b30b3c4f9fb95278d3c4c60e0c",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1543846230011,
+			"method": "POST",
+			"modified": 1543936831648,
+			"name": "Sign",
+			"parameters": [],
+			"parentId": "wrk_1d6f28b0fd4e4ff18898be0436694bdb",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:5000/sign",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8936401a6cd443baa71433b936e8ca47",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiaGVsbG8gd29ybGQiLCJpYXQiOjE1NDM5MzY4MzIsImV4cCI6MTU0Mzk0MDQzMn0.zJr7-wvEdQ6E2krZZ1k03IxcVXLZwoZQGNRWe7XTO-8\",\n\t\"secret\": \"abc\"\n}"
+			},
+			"created": 1543919149157,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bd6523b30b3c4f9fb95278d3c4c60e0c",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1535382995570.5,
+			"method": "POST",
+			"modified": 1543936857140,
+			"name": "Verify",
+			"parameters": [],
+			"parentId": "wrk_1d6f28b0fd4e4ff18898be0436694bdb",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:5000/verify",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8c3cbb71659142869aa6b239c81f3a88",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"content\": \"\"\n}"
+			},
+			"created": 1543919149160,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bd6523b30b3c4f9fb95278d3c4c60e0c",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531151378350.25,
+			"method": "POST",
+			"modified": 1543936871155,
+			"name": "404",
+			"parameters": [],
+			"parentId": "wrk_1d6f28b0fd4e4ff18898be0436694bdb",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:5000/lost",
+			"_type": "request"
+		},
+		{
+			"_id": "req_50f61b53745846b0933de8da66885987",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"data\": \"l\n}"
+			},
+			"created": 1543919149162,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bd6523b30b3c4f9fb95278d3c4c60e0c",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529035569740.125,
+			"method": "POST",
+			"modified": 1543936879391,
+			"name": "Missing content",
+			"parameters": [],
+			"parentId": "wrk_1d6f28b0fd4e4ff18898be0436694bdb",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:5000/sign",
+			"_type": "request"
+		}
+	]
+}
