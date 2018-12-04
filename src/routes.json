@@ -1,5 +1,5 @@
 {
-  "/sign": {
+  "sign": {
     "arguments": [{
       "name": "data",
       "required": true
@@ -13,7 +13,7 @@
     "fn": "sign",
     "outputType": "text/plain"
   },
-  "/verify": {
+  "verify": {
     "arguments": [{
       "name": "token",
       "type": "string",
