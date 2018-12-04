@@ -1,13 +1,14 @@
 {
   "name": "omg-jwt",
   "version": "1.0.0",
+  "private": true,
   "description": "An OMG service to build and validate JWT tokens",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/microservice/jwt.git"
   },
-  "author": "Jean Barriere",
+  "author": "Asyncy",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/microservice/jwt/issues"

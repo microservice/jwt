@@ -8,7 +8,7 @@ An OMG service to build and validate JWT tokens
 #### storyscript
 ```coffee
 # Storyscript
-encoded = jwt sign data:"hello world"  secret:"abc" expiresIn:"2h"
+encoded = jwt sign data:"hello world" secret:"abc" expiresIn:"2h"
 ```
 #### encoded value
 ```

@@ -7,24 +7,24 @@ info:
   title: JWT utils  
   description: An service to build and validate JWT tokens
   contact:
-    name: Jean Barriere
-    url: https://github.com/JeanBarriere
-    email: jean@barriere.io
+    name: Asyncy
+    url: https://github.com/Asyncy
+    email: hello@asyncy.com
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT 
 actions:
   sign:
-    help: sign some data with a secret
+    help: sign data with a secret
     arguments:
       data:
-        type: an
+        type: any
         in: requestBody
         help: The content to sign
       secret:
         type: string
         in: requestBody
-        help: The secret key
+        help: JWT secret key to be used for signing
     http:
       port: 5000
       method: post
@@ -42,7 +42,7 @@ actions:
       secret:
         type: string
         in: requestBody
-        help: The JWT secret key
+        help: JWT secret key used to sign the provided token
     http:
       port: 5000
       method: post
