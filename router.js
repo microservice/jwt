@@ -10,22 +10,23 @@ files.keys().forEach(key => {
   if (key === 'index.js') return
   actions[key.slice(0, -3)] = files(key) // slice(0, -3) to delete the extension ('.js')
 })
+actions['health'] = async () => ('OK')
 
 routeFiles.keys().forEach(key => {
   if (key === 'index.js') return
-  routes = { ...routes, ...files(key) }
+  routes = { ...routes, ...files(key), 'health': { arguments: [], fn: 'health', outputType: 'text/plain charset=utf-8' } }
 })
 
 /* fetchBody ensure the body arguments are there, based from the route */
 const fetchBody = (route, body) => {
   return new Promise((resolve, reject) => {
     try {
-      body = JSON.parse(body)
+      const jsonBody = JSON.parse(body)
       for (let c of route.arguments) {
-        if (!body[c.name] && c.required) throw new Error(`${c.name} is required`)
-        if (c.type && typeof body[c.name] !== c.type) throw new Error(`${c.name} of type ${typeof body[c.name]} should be of type ${c.type}`)
+        if (!jsonBody[c.name] && c.required) throw new Error(`${c.name} is required`)
+        if (c.type && typeof jsonBody[c.name] !== c.type) throw new Error(`${c.name} of type ${typeof jsonBody[c.name]} should be of type ${c.type}`)
       }
-      resolve(body)
+      resolve(jsonBody)
     } catch (err) {
       reject(err)
     }
@@ -62,7 +63,7 @@ module.exports = {
   with: function (body) { this.body = body; return this }, // assign body
   to: function (res) { // process to res
     if (!this.body || !this.req) { // if we're missing anything => 500 response
-      write(500, res, 'Request or body not found');
+      write(500, res, 'Request or body not found')
       return
     }
     let route = this.req.url.substr(1)

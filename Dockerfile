@@ -4,6 +4,6 @@ COPY . /app
 
 WORKDIR /app
 
-RUN npm install jsonwebtoken
+RUN npm install --production
 
 ENTRYPOINT ["node", "index.js"]
