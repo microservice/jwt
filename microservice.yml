@@ -12,7 +12,11 @@ info:
     email: hello@asyncy.com
   license:
     name: MIT
-    url: https://opensource.org/licenses/MIT 
+    url: https://opensource.org/licenses/MIT
+health:
+  http:
+    path: /health
+    port: 8080
 actions:
   sign:
     help: sign data with a secret
