@@ -16,7 +16,7 @@ info:
 health:
   http:
     path: /health
-    port: 8080
+    port: 5000
 actions:
   sign:
     help: sign data with a secret
@@ -25,10 +25,12 @@ actions:
         type: any
         in: requestBody
         help: The content to sign
+        required: true
       secret:
         type: string
         in: requestBody
         help: JWT secret key to be used for signing
+        required: true
     http:
       port: 5000
       method: post

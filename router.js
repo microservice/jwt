@@ -21,6 +21,10 @@ routeFiles.keys().forEach(key => {
 const fetchBody = (route, body) => {
   return new Promise((resolve, reject) => {
     try {
+      if (!body) {
+        resolve(undefined)
+        return
+      }
       const jsonBody = JSON.parse(body)
       for (let c of route.arguments) {
         if (!jsonBody[c.name] && c.required) throw new Error(`${c.name} is required`)
@@ -36,8 +40,10 @@ const fetchBody = (route, body) => {
 /* makeBody create the arguments array, based on the body */
 const makeBody = (route, body) => {
   let args = []
-  for (let c of route.arguments) {
-    args.push(body[c.name] || undefined)
+  if (body) {
+    for (let c of route.arguments) {
+      args.push(body[c.name] || undefined)
+    }
   }
   return args
 }
@@ -62,8 +68,8 @@ module.exports = {
   from: function (req) { this.req = req; return this }, // assign request
   with: function (body) { this.body = body; return this }, // assign body
   to: function (res) { // process to res
-    if (!this.body || !this.req) { // if we're missing anything => 500 response
-      write(500, res, 'Request or body not found')
+    if (!this.req) { // if we're missing anything => 500 response
+      write(500, res, 'Body not found')
       return
     }
     let route = this.req.url.substr(1)
